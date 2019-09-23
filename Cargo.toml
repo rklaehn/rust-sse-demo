@@ -10,3 +10,6 @@ edition = "2018"
 warp = "0.1.19"
 futures01 = { package = "futures", version = "0.1" }
 tokio = "0.1.22"
+hyper = "0.12"
+flate2 = "1.0.11"
+
