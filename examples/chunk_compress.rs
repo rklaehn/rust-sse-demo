@@ -40,9 +40,9 @@ where
         let es_with_keepalive = keepalive
             .select(self.items.map(|x| format!("{}\n", x)))
             .map(move |text| {
-                encoder.write_all(text.as_bytes());
-                encoder.flush();
-                let mut bytes: &mut Vec<u8> = encoder.get_mut();
+                encoder.write_all(text.as_bytes()).unwrap();
+                encoder.flush().unwrap();
+                let bytes: &mut Vec<u8> = encoder.get_mut();
                 let result = bytes.clone();
                 bytes.clear();
                 result
